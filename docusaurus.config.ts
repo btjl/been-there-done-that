@@ -163,7 +163,14 @@ const config: Config = {
         onInlineAuthors: 'warn',
         onUntruncatedBlogPosts: 'warn',
       },
-    ]
+    ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-EKH2D0SS31',
+        anonymizeIP: true,
+      },
+    ],
   ]
 };
 
