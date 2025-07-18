@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { places } from '../data/places';
+import { places } from '../../data/places';
 import { PlaceMarker } from './PlaceMarker';
 
 const mostRecent = places[places.length - 1];
