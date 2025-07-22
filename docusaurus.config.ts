@@ -1,5 +1,6 @@
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
+import "dotenv/config";
 import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -8,13 +9,17 @@ const config: Config = {
   title: 'Brennan Tan',
   favicon: 'img/favicon.ico',
 
+  customFields: {
+    gMapsEmbedApiKey: process.env.GOOGLE_MAPS_EMBED_API_KEY
+  },
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://been-there-done-that.netlify.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -49,8 +54,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/traveldex-card.jpg',
     navbar: {
       title: 'Been There Done That',
       logo: {
@@ -120,11 +124,12 @@ const config: Config = {
         id: 'community',
         path: './community',
         routeBasePath: 'community',
-        blogSidebarTitle: 'Community Events',
-        blogDescription: 'Updates from the community',
+        blogSidebarTitle: 'Community',
+        blogDescription: 'Community interactions',
         showReadingTime: true,
         postsPerPage: 1,
         blogSidebarCount: "ALL",
+        blogTitle: "Community",
         feedOptions: {
           type: ['rss', 'atom'],
           xslt: true,
@@ -132,11 +137,13 @@ const config: Config = {
         // Please change this to your repo.
         // Remove this to remove the "edit this page" links.
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/btjl/been-there-done-that/tree/main/community/',
         // Useful options to enforce blogging best practices
         onInlineTags: 'warn',
         onInlineAuthors: 'warn',
         onUntruncatedBlogPosts: 'warn',
+        authorsMapPath: '../meta/authors.yml',
+        tags: '../meta/tags.yml',
       },
     ],
     [
@@ -150,6 +157,7 @@ const config: Config = {
         showReadingTime: true,
         postsPerPage: 1,
         blogSidebarCount: "ALL",
+        blogTitle: "Vlogs",
         feedOptions: {
           type: ['rss', 'atom'],
           xslt: true,
@@ -157,11 +165,13 @@ const config: Config = {
         // Please change this to your repo.
         // Remove this to remove the "edit this page" links.
         editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          'https://github.com/btjl/been-there-done-that/tree/main/vlogs/',
         // Useful options to enforce blogging best practices
         onInlineTags: 'warn',
         onInlineAuthors: 'warn',
         onUntruncatedBlogPosts: 'warn',
+        authorsMapPath: '../meta/authors.yml',
+        tags: '../meta/tags.yml',
       },
     ],
     [

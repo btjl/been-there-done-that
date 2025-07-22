@@ -7,7 +7,7 @@
 
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import { Tags, type TagType, type User } from '@site/src/data/users';
+import { Tags, type TagType, type App } from '@site/src/data/apps';
 import Heading from '@theme/Heading';
 import Image from "@theme/IdealImage";
 import clsx from 'clsx';
@@ -43,45 +43,45 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-function getCardImage(user: User): string {
+function getCardImage(app: App): string {
   return (
-    user.preview ??
+    app.preview ??
     // TODO make it configurable
     `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
-      user.website,
+      app.website,
     )}/showcase`
   );
 }
 
-function ShowcaseCard({ user }: { user: User }) {
-  const image = getCardImage(user);
+function ShowcaseCard({ app }: { app: App }) {
+  const image = getCardImage(app);
   return (
-    <li key={user.title} className="card shadow--md">
+    <li key={app.title} className="card shadow--md">
       <div className={clsx('card__image', styles.showcaseCardImage)}>
-        <Image img={image} alt={user.title} />
+        <Image img={image} alt={app.title} />
       </div>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
-            <Link href={user.website} className={styles.showcaseCardLink}>
-              {user.title}
+            <Link href={app.website} className={styles.showcaseCardLink}>
+              {app.title}
             </Link>
           </Heading>
-          {user.source && (
+          {app.source && (
             <Link
-              href={user.source}
+              href={app.source}
               className={clsx(
                 'button button--secondary button--sm',
                 styles.showcaseCardSrcBtn,
               )}>
-              <Translate id="showcase.card.sourceLink">source</Translate>
+              <Translate id="showcase.card.sourceLink">code</Translate>
             </Link>
           )}
         </div>
-        <p className={styles.showcaseCardBody}>{user.description}</p>
+        <p className={styles.showcaseCardBody}>{app.description}</p>
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
-        <ShowcaseCardTag tags={user.tags} />
+        <ShowcaseCardTag tags={app.tags} />
       </ul>
     </li>
   );

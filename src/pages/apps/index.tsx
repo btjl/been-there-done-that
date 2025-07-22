@@ -15,9 +15,8 @@ import ShowcaseCards from './_components/ShowcaseCards';
 
 const TITLE = translate({ message: 'Travel Apps Showcase' });
 const DESCRIPTION = translate({
-  message: 'List of Apps I built for traveling',
+  message: 'Apps I built for traveling',
 });
-const SUBMIT_URL = 'https://github.com/facebook/docusaurus/discussions/7826';
 
 function ShowcaseHeader() {
   return (

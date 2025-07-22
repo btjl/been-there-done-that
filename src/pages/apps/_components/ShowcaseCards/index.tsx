@@ -9,28 +9,18 @@ import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import ShowcaseCard from '../ShowcaseCard';
 
-import Translate from '@docusaurus/Translate';
-import { User, Users } from "@site/src/data/users";
+import { App, Apps } from "@site/src/data/apps";
 
 import styles from './styles.module.css';
-import Heading from '@theme/Heading';
 
 
-function HeadingAllSites() {
-  return (
-    <Heading as="h2">
-      <Translate id="showcase.usersList.allUsers">All sites</Translate>
-    </Heading>
-  );
-}
-
-function CardList({ heading, items }: { heading?: ReactNode; items: User[] }) {
+function CardList({ heading, items }: { heading?: ReactNode; items: App[] }) {
   return (
     <div className="container">
       {heading}
       <ul className={clsx('clean-list', styles.cardList)}>
         {items.map((item) => (
-          <ShowcaseCard key={item.title} user={item} />
+          <ShowcaseCard key={item.title} app={item} />
         ))}
       </ul>
     </div>
@@ -42,7 +32,7 @@ export default function ShowcaseCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      <CardList items={Users} />
+      <CardList items={Apps} />
     </section>
   );
 }

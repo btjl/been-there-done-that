@@ -10,13 +10,20 @@ export default function Home(): ReactNode {
       description="Welcome to my travel blog and vlog companion site">
       <main className={clsx('container', styles.mainContent)}>
         <div className="text--center margin-vert--xl">
-          <h1 className="hero__title">Blog companion to my vlogs</h1>
-          <p className="hero__subtitle">
-            Vlogs is a companion site for my travel vlogs.
-          </p>
-          <p className="hero__subtitle">
-            Community is a dedication to my fans.
-          </p>
+          <div className={clsx("margin-bottom--lg", styles.homePageVideoContainer)}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+            >
+              <source src="/img/hero.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h1 className='hero__subtitle'>Welcome to my humble blog for my vlogs
+          </h1>
         </div>
       </main>
     </Layout>

@@ -1,10 +1,5 @@
-.mainContent {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .hero__title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--ifm-heading-color);
 }
@@ -13,4 +8,26 @@
   font-size: 1.2rem;
   color: var(--ifm-font-color-base);
   margin: 1rem 0;
+}
+
+.homePageVideoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--ifm-spacing-vertical-lg);
+}
+
+.homePageVideoContainer video {
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 996px) {
+  .homePageVideoContainer video {
+    width: 60%;
+    max-width: 1200px;
+  }
 }
