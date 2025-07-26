@@ -6,7 +6,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Brennan Tan',
+  title: 'Been There Done That',
   favicon: 'img/favicon.ico',
 
   customFields: {
