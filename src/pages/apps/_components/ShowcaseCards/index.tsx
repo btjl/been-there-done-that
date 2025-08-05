@@ -8,10 +8,36 @@
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import ShowcaseCard from '../ShowcaseCard';
-
-import { App, Apps } from "@site/src/data/apps";
-
+import { TagType } from '../tags';
 import styles from './styles.module.css';
+
+export type App = {
+  title: string;
+  description: string;
+  preview: string | null; // null = use our serverless screenshot service
+  website: string;
+  source: string | null;
+  tags: TagType[];
+};
+
+export const Apps: App[] = [
+  {
+    title: 'Traveldex',
+    description: 'Multi-lingual encyclopedia for common travel phrases',
+    preview: require('/img/apps/traveldex.png'),
+    website: 'https://traveldex.vercel.app/',
+    source: 'https://github.com/btjl/traveldex',
+    tags: ['personal'],
+  },
+  {
+    title: "Been There Done That",
+    description: "Companion Blog to my YouTube videos",
+    preview: require('/img/apps/been-there-done-that.png'),
+    website: "https://been-there-done-that.netlify.app/",
+    source: "https://github.com/btjl/been-there-done-that",
+    tags: ["personal", "requires-setup"]
+  }
+];
 
 
 function CardList({ heading, items }: { heading?: ReactNode; items: App[] }) {

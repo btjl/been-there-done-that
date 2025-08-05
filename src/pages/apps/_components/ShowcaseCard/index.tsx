@@ -7,11 +7,13 @@
 
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import { Tags, type TagType, type App } from '@site/src/data/apps';
 import Heading from '@theme/Heading';
-import Image from "@theme/IdealImage";
+
+import Image from '@theme/IdealImage';
 import clsx from 'clsx';
 import React from 'react';
+import { App } from '../ShowcaseCards';
+import { Tags, TagType } from '../tags';
 import styles from './styles.module.css';
 
 function TagItem({

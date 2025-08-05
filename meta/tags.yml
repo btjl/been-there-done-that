@@ -2,3 +2,39 @@ singapore:
   label: Singapore
   permalink: /singapore
   description: Singapore
+attraction:
+  label: Attraction
+  permalink: /attraction
+  description: Attraction
+heritage:
+  label: Heritage
+  permalink: /heritage
+  description: Heritage
+culture:
+  label: Culture
+  permalink: /culture
+  description: Culture
+eat the world:
+  label: Eat The World
+  permalink: /eat-the-world
+  description: Eat The World
+hotel:
+  label: Hotel
+  permalink: /hotel
+  description: Hotel
+food:
+  label: Food
+  permalink: /food
+  description: Food
+theme park:
+  label: Theme Park
+  permalink: /theme-park
+  description: Theme Park
+skill:
+  label: Skill
+  permalink: /skill
+  description: Skill
+park:
+  label: Park
+  permalink: /park
+  description: Park
